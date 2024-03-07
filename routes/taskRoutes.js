@@ -12,15 +12,26 @@ router.get('/', (req, res) => {
 
 
 //endpoint to add a new task
-router.post('/', (req, res) => {
-    const { task } = req.body;
-    const newTask = { id: uuid(), task, completed: false };
+router.post ('/', (req, res) => {
+    const {task} = req.body;
+    const newTask = { id: uuid(), task, completed: false }; 
 
-    const tasks = JSON.parse(fs.readFileSync('tasks.json', 'utf-8'));
+    let tasks = JSON.parse(fs.readFileSync('./data/tasks.json', 'utf-8'));
     tasks.push(newTask);
-    fs.writeFileSync('tasks.json', JSON.stringify(tasks));
+    fs.writeFileSync('./data/tasks.json', JSON.stringify(tasks));
 
     res.json(newTask);
+});
+
+// Endpoint to delete a task
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+
+    let tasks = JSON.parse(fs.readFileSync('tasks.json', 'utf-8'));
+    tasks = tasks.filter(task => task.id !== id);
+    fs.writeFileSync('tasks.json', JSON.stringify(tasks));
+
+    res.json({ message: 'Task deleted successfully' });
 });
 
 module.exports = router
