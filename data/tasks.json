@@ -1,17 +1,1 @@
-[
-  {
-    "id": "1",
-    "task": "Complete homework",
-    "completed": false
-  },
-  {
-    "id": "2",
-    "task": "Buy groceries",
-    "completed": true
-  },
-  {
-    "id": "3",
-    "task": "Go for a run",
-    "completed": false
-  }
-]
+[{"id":"1","task":"Wash dishes","completed":false},{"id":"2","task":"Wipe countertops","completed":false},{"id":"3","task":"Sweep the floor","completed":false},{"id":"4","task":"Clean appliances","completed":false},{"id":"80bdcc49-0895-4a78-99a6-eaba0d15d2f6","task":"clean the fridge","completed":false},{"id":"469f9746-5f00-457b-bca0-16536a8e133b","task":"bring girlfriend bubbly","completed":false}]
